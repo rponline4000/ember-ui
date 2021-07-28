@@ -2,14 +2,19 @@
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img
-          src="https://staffomatic-com.s3.amazonaws.com/images/logos/staffomatic-logo-colored2x.svg"
-          alt="Staffomatic"
-        />
+        <img src="https://staffomatic-com.s3.amazonaws.com/images/logos/staffomatic-logo-colored2x.svg"
+          alt="Staffomatic" />
         <h1 class="navbar-item is-size-5">
           Staffomatic
         </h1>
       </a>
+      <LinkTo class="navbar-item" @route="users">
+        users
+      </LinkTo>
+      <LinkTo class="navbar-item" @route="users.archive">
+        archive
+      </LinkTo>
     </div>
+
   </div>
 </nav>

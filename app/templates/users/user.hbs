@@ -1,31 +1,58 @@
 {{page-title 'User'}}
-  <div class="container has-text-centered">
-    <div class="column is-3 is-offset-4">
+<div class="container has-text-centered">
+  <div class="column is-3 is-offset-4">
 
-      <LinkTo @route="users">
-        <button class="button mb-2" type="button">
-          Back to users
-        </button>
-      </LinkTo>
+    <LinkTo @route="users">
+      <button class="button mb-2" type="button">
+        Back to users
+      </button>
+    </LinkTo>
 
-      <div class="user-profile">
+    <div class="user-profile card">
 
-        <figure class="avatar">
-          <img src={{@model.image}} width="256px" alt="User" />
+      <div class="card-image">
+        <figure class="image is-square">
+          <img src={{@model.image}} alt="User" />
         </figure>
-
-        <p class="title has-text-white my-2">
-          {{@model.name}}
-        </p>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <p class="title has-text-white my-2">
+            {{@model.name}}
+          </p>
+        </div>
 
         <p class="subtitle has-text-white my-2">
-          Example Value:
           {{@model.value}}
         </p>
+        <footer class="card-footer">
+
+          {{#if (eq model.archive false)}}
+
+          <a href="#" class="card-footer-item" onclick={{action @model.archiveClick}}>
+            <div class="icon-text">
+              <span class="icon has-text-info">
+                <i class="fas fa-box"></i>
+              </span>
+              <span>Archive</span>
+            </div>
+          </a>
+
+          {{else}}
+          <a href="#" class="card-footer-item" onclick={{action @model.archiveClick}}>
+            <div class="icon-text">
+              <span class="icon has-text-info">
+                <i class="fas fa-box"></i>
+              </span>
+              <span>Unarchive</span>
+            </div>
+          </a>
+          {{/if}}
+        </footer>
 
         {{!-- Place the component to archive/unarchive users here --}}
-
       </div>
     </div>
   </div>
+</div>
 {{outlet}}
