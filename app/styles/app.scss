@@ -37,23 +37,56 @@ input::placeholder {
 
 .user-profile {
   background-color: var(--div-bg);
-  height: 440px;
-  min-width: 350px;
-  margin: auto 0; 
-  padding: 15px 15px;
+  margin: auto 0;
 }
 
 .user-select {
   background: var(--div-bg);
   height: 60px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-family: "Roboto", sans-serif;
+  color: #333;
 }
 
-.user-select p{
+.user-select p {
   color: var(--font-color1);
   padding-top: 8px;
   margin-left: 70px;
+  position: relative;
+  top: 10px;
+  width: 100%;
+
 }
-.user-select:hover > p{
+
+.user-select:hover>p {
   color: var(--font-color2);
   text-decoration: underline;
+}
+
+.user-archive-btn {
+  float: right;
+  margin-right: 15px;
+  position: relative;
+  bottom: 18px;
+  padding: 0 5px 0 5px;
+
+  &:hover {
+    box-shadow: 2px 3px 1px 1px #00000024;
+    transition: 0.2s;
+  }
+
+  span {
+    position: relative;
+    bottom: 6px;
+  }
+
+  img {
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+  }
+}
+
+.card-footer-item {
+  color: white;
 }
